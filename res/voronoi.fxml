@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ch.kbw.voronoi.controller.Controller">
+    <center>
+        <Canvas fx:id="canvas" height="600.0" width="600.0" BorderPane.alignment="CENTER"/>
+    </center>
+    <top>
+        <Label text="Voronoidiagram" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Label>
+    </top>
+    <left>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <ChoiceBox fx:id="color" prefWidth="130.0">
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                </ChoiceBox>
+                <TextField fx:id="pointAmount" maxWidth="-Infinity" prefWidth="130.0" text="100">
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                </TextField>
+                <Button mnemonicParsing="false" onAction="#createPoints" prefWidth="130.0" text="Create points">
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#voronoi" prefWidth="130.0" text="Use algorithm">
+                    <VBox.margin>
+                        <Insets top="35.0"/>
+                    </VBox.margin>
+                </Button>
+                <ChoiceBox fx:id="algorithm" prefWidth="130.0">
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                </ChoiceBox>
+                <Button mnemonicParsing="false" onAction="#readFile" prefWidth="130.0" text="Read file">
+                    <VBox.margin>
+                        <Insets top="35.0"/>
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#save" prefWidth="130.0" text="Save points">
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                </Button>
+                <CheckBox fx:id="animation" mnemonicParsing="false" onAction="#anim" text="Animation">
+                    <VBox.margin>
+                        <Insets top="35.0"/>
+                    </VBox.margin>
+                </CheckBox>
+                <CheckBox fx:id="points" mnemonicParsing="false" onAction="#point" text="Points">
+                    <VBox.margin>
+                        <Insets top="15.0"/>
+                    </VBox.margin>
+                </CheckBox>
+                <Button mnemonicParsing="false" onAction="#toggle" prefWidth="130.0" text="Toggle lines">
+                    <VBox.margin>
+                        <Insets top="20.0"/>
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+</BorderPane>
